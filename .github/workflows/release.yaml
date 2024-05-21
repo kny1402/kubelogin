@@ -64,7 +64,7 @@ jobs:
           binary: kubelogin
 
   publish:
-    if: github.ref_type == 'tag'
+    if: github.ref_type == 'branch'
     needs:
       - build
     runs-on: ubuntu-latest
