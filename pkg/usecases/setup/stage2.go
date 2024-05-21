@@ -19,20 +19,8 @@ You got a token with the following claims:
 
 {{ .IDTokenPrettyJSON }}
 
-## 3. Bind a cluster role
 
-Run the following command:
-
-	kubectl create clusterrolebinding oidc-cluster-admin --clusterrole=cluster-admin --user='{{ .IssuerURL }}#{{ .Subject }}'
-
-## 4. Set up the Kubernetes API server
-
-Add the following options to the kube-apiserver:
-
-	--oidc-issuer-url={{ .IssuerURL }}
-	--oidc-client-id={{ .ClientID }}
-
-## 5. Set up the kubeconfig
+## 3. Set up the kubeconfig
 
 Run the following command:
 
@@ -46,7 +34,7 @@ Run the following command:
 	  --exec-arg={{ $arg }}
 {{- end }}
 
-## 6. Verify cluster access
+## 4. Verify cluster access
 
 Make sure you can access the Kubernetes cluster.
 
