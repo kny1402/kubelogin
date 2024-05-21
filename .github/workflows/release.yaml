@@ -33,9 +33,6 @@ jobs:
           - runs-on: ubuntu-latest
             GOOS: linux
             GOARCH: arm
-          - runs-on: ubuntu-latest
-            GOOS: linux
-            GOARCH: ppc64le
           - runs-on: macos-latest
             GOOS: darwin
             GOARCH: amd64
@@ -44,9 +41,6 @@ jobs:
             GOOS: darwin
             GOARCH: arm64
             CGO_ENABLED: 1 # https://github.com/int128/kubelogin/issues/762
-          - runs-on: windows-latest
-            GOOS: windows
-            GOARCH: amd64
     runs-on: ${{ matrix.platform.runs-on }}
     env:
       GOOS: ${{ matrix.platform.GOOS }}
