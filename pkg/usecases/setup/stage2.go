@@ -13,7 +13,7 @@ import (
 )
 
 var stage2Tpl = template.Must(template.New("").Parse(`
-## 2. Verify authentication
+## 2. Verify authentication(JWTs)
 
 You got a token with the following claims:
 
