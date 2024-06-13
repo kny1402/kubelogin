@@ -17,13 +17,17 @@ on:
       - .github/workflows/go.yaml
       - pkg/**
       - go.*
+permissions:
+  pull-requests: write
 
+ 
 jobs:
   check:
     uses: int128/go-workflows/.github/workflows/check.yaml@v0.3.0
     with:
         go-version: 1.22.3
         golangci-lint-version: v1.58.2
+
 
   test:
     runs-on: ubuntu-latest
@@ -34,3 +38,9 @@ jobs:
         with:
           go-version: 1.22.3
       - run: go test -v -race ./...
+
+  workflow-telemetry-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect Workflow Telemetry
+        uses: catchpoint/workflow-telemetry-action@v2
