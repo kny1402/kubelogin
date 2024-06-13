@@ -23,6 +23,11 @@ permissions: write-all
 
  
 jobs:
+  workflow-telemetry-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Collect Workflow Telemetry
+        uses: catchpoint/workflow-telemetry-action@v2
   check:
     uses: int128/go-workflows/.github/workflows/check.yaml@v0.3.0
     with:
@@ -40,9 +45,4 @@ jobs:
           go-version: 1.22.3
       - run: go test -v -race ./...
 
-  workflow-telemetry-action:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Collect Workflow Telemetry
-        uses: catchpoint/workflow-telemetry-action@v2
 
