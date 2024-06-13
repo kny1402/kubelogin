@@ -17,8 +17,7 @@ on:
       - .github/workflows/go.yaml
       - pkg/**
       - go.*
-permissions:
-  pull-requests: write
+
 
  
 jobs:
@@ -44,3 +43,5 @@ jobs:
     steps:
       - name: Collect Workflow Telemetry
         uses: catchpoint/workflow-telemetry-action@v2
+    permissions:
+      pull-requests: write
