@@ -18,8 +18,7 @@ on:
       - pkg/**
       - go.*
 
-permissions:
-  pull-requests: write
+permissions: write-all
 
 
  
