@@ -1,8 +1,7 @@
 name: oltp
 on:
-  issue_comment:                                     
-    types: [created, edited, deleted]
-    
+  workflow_dispatch:
+  
 permissions:
   pull-requests: write
 jobs:
